@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bvecl3dswpmls"]
+
+[ext_resource type="Texture2D" uid="uid://ctqfu0yq5inrs" path="res://icon.svg" id="1_6tysd"]
+[ext_resource type="PackedScene" uid="uid://bc0ima3comdwp" path="res://multiplayer/sceny/HighLevelUI.tscn" id="2_vfmyf"]
+[ext_resource type="Script" uid="uid://c40bf0aatlbhm" path="res://multiplayer/skrypty/high_level_multiplayer_spawner.gd" id="3_q6uwo"]
+[ext_resource type="PackedScene" uid="uid://c7qk3kcmumpod" path="res://multiplayer/sceny/HighLevelNetworkPlayer.tscn" id="4_rvg45"]
+
+[node name="main" type="Node2D" unique_id=1925509801]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=663144019]
+position = Vector2(-112, -63)
+texture = ExtResource("1_6tysd")
+
+[node name="HighLevelUi" parent="." unique_id=2035724605 instance=ExtResource("2_vfmyf")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=682817450]
+_spawnable_scenes = PackedStringArray("uid://c7qk3kcmumpod")
+spawn_path = NodePath("..")
+script = ExtResource("3_q6uwo")
+network_player = ExtResource("4_rvg45")
